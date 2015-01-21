@@ -25,6 +25,8 @@ impl Iterator for Scanner {
     type Item = Token;
 
     fn next(&mut self) -> Option<Token> {
+        if self.pos >= self.inp.len() - 1 { return None } 
+
         while isspace(self.inp.char_at(self.pos)) { self.pos += 1 }
 
         let c = self.inp.char_at(self.pos);

@@ -59,7 +59,8 @@ fn repl() {
                     .read_line()
                     .ok()
                     .expect("Failed to read line");
-        tiko::lexer::lex(inp);
+        
+        tiko::eval(inp);
     }
 }
 
@@ -71,5 +72,5 @@ fn intp(filename: String) {
                  .read_to_string()
                  .unwrap();
         
-    tiko::lexer::lex(file);
+    tiko::eval(file);
 }
